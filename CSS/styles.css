@@ -401,6 +401,11 @@ footer {
   display: inline-flex;
 }
 
+.footer-conteiner a[href="index.html"] {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
 .footer li:nth-child(2) {
   margin-left: 70px;
 }
