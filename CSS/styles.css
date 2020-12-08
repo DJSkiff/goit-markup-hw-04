@@ -5,6 +5,9 @@
   --color-main-text: #212121;
   --color-contrast-text: #ffffff;
   --color-address-text: #757575;
+  --color-future-background: #f5f4fa;
+  --color-social-bcg: #afb1b8;
+  --color-addr-social-bcg: rgba(255, 255, 255, 0.1);
 }
 html {
   font-family: "Roboto", sans-serif;
@@ -48,8 +51,15 @@ a {
 }
 
 .address a {
+  font-weight: 500;
+  font-style: normal;
   font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
   color: var(--color-address-text);
+  fill: currentColor;
+  vertical-align: middle;
+  /* outline: 1px solid red; */
 }
 
 .address a:last-child {
@@ -59,10 +69,20 @@ a {
 .address a:hover,
 :focus {
   color: var(--color-hover);
+  fill: var(--color-hover);
+}
+
+.icon-envelope {
+  margin-right: 10px;
 }
 
 .hero {
-  background-color: var(--background-color-two);
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../Images/header-bcg.jpg);
   padding-left: auto;
   padding-right: auto;
 }
@@ -87,6 +107,7 @@ a {
 }
 
 .button {
+  border: none;
   background-color: var(--color-hover);
   font-size: 16px;
   font-weight: bold;
@@ -95,6 +116,11 @@ a {
   padding: 10px 32px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
+
+.button:hover {
+  cursor: pointer;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -120,14 +146,16 @@ h2 {
 
 .futures-conteiner li {
   width: 270px;
+  text-align: justify;
 }
 
 .futures-conteiner span {
   color: var(--color-address-text);
   font-size: 14px;
   line-height: 1.71;
-  letter-spacing: 0.06 em;
+  letter-spacing: 0.03 em;
 }
+
 .f-conteiner {
   display: flex;
   justify-content: space-between;
@@ -147,6 +175,19 @@ h2 {
 .futures h3 {
   margin: 0;
   margin-bottom: 50px;
+}
+
+.icon-futures {
+  margin: 0px;
+  margin-bottom: 30px;
+  height: 120px;
+  border-radius: 4px;
+  background-color: var(--color-future-background);
+  text-align: center;
+}
+
+.icon-f {
+  margin-top: 25px;
 }
 
 .what-we-do {
@@ -174,7 +215,7 @@ h2 {
   display: flex;
 }
 
-figure {
+.team figure {
   flex-grow: 1;
   width: 270px;
   margin: 0;
@@ -184,9 +225,9 @@ figure {
     0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-figcaption {
+.team figcaption {
   text-align: center;
-  padding: 30px;
+  padding-top: 30px;
 }
 
 .team h3 {
@@ -203,6 +244,67 @@ figcaption {
   margin-bottom: 10px;
 }
 
+.icon-social {
+  display: inline-block;
+}
+
+.icon-social button {
+  /* outline: 1px solid rebeccapurple; */
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  margin-right: 10px;
+  margin-top: 16px;
+  margin-bottom: 38px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-contrast-text);
+  fill: var(--color-social-bcg);
+}
+.icon-social button:last-child {
+  margin-right: 0px;
+}
+
+.icon-social button:hover {
+  cursor: pointer;
+  background-color: var(--color-hover);
+  fill: var(--color-contrast-text);
+}
+
+.regular-customers h3 {
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 36px;
+  line-height: 1.17;
+}
+
+.r-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.r-customer {
+  margin-bottom: 94px;
+}
+
+.r-container button {
+  margin: 0px;
+  padding: 0px;
+  width: 170px;
+  height: 90px;
+  border: 1px solid var(--color-social-bcg);
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: var(--color-contrast-text);
+  fill: var(--color-social-bcg);
+}
+
+.r-container button:hover {
+  cursor: pointer;
+  fill: var(--color-hover);
+  border: 1px solid var(--color-hover);
+}
 .filter {
   display: flex;
   justify-content: center;
@@ -225,7 +327,13 @@ figcaption {
   margin: 0;
 }
 
+.filter button {
+  background-color: var(--background-color-one);
+  padding: 6px 22px;
+}
+
 .filter button:hover {
+  cursor: pointer;
   color: var(--color-contrast-text);
   background-color: var(--color-hover);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
@@ -244,6 +352,8 @@ figcaption {
   margin-bottom: -27px;
 }
 .portfolio figure {
+  padding: 0px;
+  margin: 0px;
   min-width: 370px;
   border: 1px solid #eeeeee;
 }
@@ -251,7 +361,7 @@ figcaption {
 .portfolio figcaption {
   text-align: left;
   margin: 0;
-  padding: 20px 24 px;
+  padding: 20px 24px;
 }
 
 .portfolio figcaption > p {
@@ -270,15 +380,41 @@ figcaption {
   flex-basis: calc(100% / 3-27px);
 }
 
-.filter button {
-  background-color: var(--background-color-one);
-  padding: 6px 22px;
+.portfolio > li:nth-child(3n + 3) {
+  margin-right: 0px;
+}
+
+.portfolio figure:hover {
+  cursor: pointer;
+  border: 1px solid #eeeeee;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 footer {
   padding: 60px 15px;
   background-color: var(--background-color-two);
 }
+
+.footer-conteiner ul {
+  display: inline-flex;
+}
+
+.footer li:nth-child(2) {
+  margin-left: 70px;
+}
+
+.footer p {
+  margin: 0px;
+  padding: 0px;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-contrast-text);
+}
+
 .footer-address {
   font-size: 14px;
   line-height: 1.71;
@@ -297,10 +433,29 @@ footer {
 }
 
 .footer-address a:hover,
-:focus {
+a:focus {
+  cursor: pointer;
   color: var(--color-hover);
 }
 
 .logo {
   padding-bottom: 20px;
+}
+
+.icon-social-address button {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  margin-right: 10px;
+  margin-top: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-addr-social-bcg);
+  fill: var(--color-contrast-text);
+}
+
+.icon-social-address button:hover {
+  cursor: pointer;
+  background-color: var(--color-hover);
 }
